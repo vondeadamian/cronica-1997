@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Contacto | El Diario del Perú</title>
+    <style>
+        body { 
+            font-family: 'Times New Roman', serif; 
+            background: #fcfcfc; 
+            padding: 40px; 
+            margin: 0;
+        }
+        .box-contacto { 
+            max-width: 500px; 
+            margin: auto; 
+            background: white; 
+            padding: 30px; 
+            border: 1px solid #ccc; 
+            box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+        }
+        h1 { 
+            color: #000000; 
+            text-align: center; 
+            border-bottom: 2px solid #000000; 
+            margin-top: 0;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #333;
+        }
+        input, textarea { 
+            width: 100%; 
+            padding: 10px; 
+            margin: 5px 0; 
+            border: 1px solid #ccc; 
+            box-sizing: border-box; 
+            font-family: sans-serif; 
+        }
+        button { 
+            width: 100%; 
+            padding: 12px; 
+            background: rgb(12, 17, 22); 
+            color: white; 
+            border: none; 
+            cursor: pointer; 
+            font-weight: bold; 
+            margin-top: 20px;
+            font-size: 1em;
+        }
+        button:hover { 
+            background: #000000; 
+        }
+        .volver { 
+            display: block; 
+            text-align: center; 
+            margin-top: 25px; 
+            color: #666; 
+            text-decoration: none; 
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="box-contacto">
+        <h1>Buzón de Consultas</h1>
+        <p style="text-align: center; font-size: 0.9em; color: #555;">
+            Envíe sus sugerencias sobre el contenido histórico de forma privada.
+        </p>
+        
+        <form action="https://formspree.io/f/mlggbjze" method="POST">
+            <label for="nombre">Su Nombre:</label>
+            <input type="text" id="nombre" name="name" placeholder="Ej. Juan Pérez" required>
+            
+            <label for="email">Su Correo Electrónico:</label>
+            <input type="email" id="email" name="_replyto" placeholder="nombre@correo.com" required>
+            
+            <label for="mensaje">Mensaje o Sugerencia:</label>
+            <textarea id="mensaje" name="message" rows="5" placeholder="Escriba aquí sus comentarios..." required></textarea>
+            
+            <button type="submit">Enviar al Diario</button>
+        </form>
+        
+        <a href="index.html" class="volver">← Volver a la Portada del Periódico</a>
+    </div>
+</body>
+</html>

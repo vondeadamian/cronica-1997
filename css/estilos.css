@@ -1,0 +1,162 @@
+/* 1. CONFIGURACIÓN GENERAL */
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #fcfcfc;
+    margin: 0;
+    padding: 10px;
+}
+
+.contenedor-periodico {
+    max-width: 900px;
+    margin: 10px auto;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    padding: 20px 30px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+/* 2. CABECERA */
+.cabecera-periodico h1 {
+    font-size: 3.2em;
+    text-align: center;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    color: #333;
+}
+
+.info-cabecera {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin: 5px 0;
+    color: #555;
+}
+
+.doble-linea {
+    border: none;
+    border-top: 4px double #333;
+    margin: 5px 0 15px 0;
+}
+
+/* 3. TÍTULO DE LA NOTICIA */
+.titulo-noticia {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+/* 4. CUADRO AZUL (Flotante a la derecha como en el modelo) */
+.columna-derecha-datos {
+    float: right; /* Esto permite que el texto lo rodee */
+    width: 200px;
+    background: #f9f9f9;
+    border: 1px solid #0056b3;
+    padding: 10px;
+    margin: 0 0 15px 15px;
+}
+
+.columna-derecha-datos h3 {
+    font-size: 0.8em;
+    background: #0056b3;
+    color: white;
+    margin: -10px -10px 10px -10px;
+    padding: 5px;
+    text-align: center;
+}
+
+/* 5. CONTENIDO (IMPORTANTE: Se quitó columns: 2 para que fluya el float) */
+.contenido-columnas {
+    text-align: justify;
+    line-height: 1.5;
+    display: block; /* Asegura que el texto rodee a los elementos flotantes */
+}
+
+/* 6. IMAGEN DE LA RESIDENCIA (Flotante como en el modelo) */
+.columna-imagen {
+    float: left; /* Flota a la izquierda o derecha según tu preferencia original */
+    margin: 0 20px 15px 0;
+    max-width: 45%; /* Ajusta el tamaño para que el texto quepa al lado */
+}
+
+.imagen-noticia {
+    width: 100%;
+    filter: grayscale(20%);
+    border: 1px solid #000;
+}
+
+.credito-imagen {
+    font-size: 0.8em;
+    font-style: italic;
+    margin-top: 4px;
+}
+
+/* 7. TOOLTIPS */
+.tooltip-azul {
+    color: #0056b3;
+    font-weight: bold;
+    border-bottom: 1px dashed #0056b3;
+    position: relative;
+    cursor: help;
+}
+
+.tooltip-texto {
+    visibility: hidden;
+    width: 220px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px;
+    position: absolute;
+    z-index: 10;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -110px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 0.85em;
+    font-weight: normal;
+}
+
+.tooltip-azul:hover .tooltip-texto {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* 8. DISEÑO RESPONSIVO (Para cualquier celular) */
+@media (max-width: 600px) {
+    .contenedor-periodico {
+        padding: 10px;
+        margin: 0;
+    }
+
+    .cabecera-periodico h1 {
+        font-size: 2em;
+    }
+
+    .info-cabecera {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .columna-derecha-datos, .columna-imagen {
+        float: none; /* Quitamos el flotado en móviles para que no se vea amontonado */
+        width: 100%;
+        max-width: 100%;
+        margin: 15px 0;
+    }
+
+    .titulo-noticia {
+        font-size: 1.4em;
+    }
+}
+
+.pie-periodico {
+    text-align: center;
+    font-size: 0.8em;
+    margin-top: 20px;
+    clear: both; /* Asegura que el pie siempre esté abajo */
+}
